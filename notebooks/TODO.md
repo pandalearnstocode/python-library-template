@@ -1,0 +1,1 @@
+Notebook folders are used to validate the script files and installed library are working fine or not. Note, a pre-commit hook has to be enabled to ensure that the notebooks we are committing to a git remote has to no output attached to it.
