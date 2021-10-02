@@ -4,7 +4,6 @@
 
 Right now this feature is being developed for just csv files. Later we need to extend this.
 
-
 __Initialize data folder:__
 
 Read all the files present in the data/input folder. create a files.lock file dict with key as data hash and value as file name. upload the datasets present in input folder along with the files.lock.
@@ -20,3 +19,18 @@ Read the local file.lock and online file.lock file, upload the datasets for whic
 __Clean data:__
 
 Delete all the files in input and output directory and also delete the content of file.lock dict in local.
+
+
+__Notes:__
+
+* Use async python sdk for azure storage.
+* Have entry-point notebook and function in cli app.
+* Have the same feature in makefile.
+
+
+__Status:__
+
+* Initialize data folder
+* Upload data
+* Download data
+* Clean data
