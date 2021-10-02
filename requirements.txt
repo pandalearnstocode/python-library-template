@@ -4,7 +4,7 @@ twine
 joblib==1.0.1
 black==21.7b0
 setuptools
-loguru==0.5.3
+loguru
 python-dotenv==0.18.0
 commitizen
 pre-commit
@@ -26,5 +26,4 @@ pytest-xdist
 hypothesis
 pytest-mock
 pylint
-pylint-flakes
-
+typer
