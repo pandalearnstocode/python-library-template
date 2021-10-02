@@ -11,12 +11,14 @@ app = typer.Typer()
 def hello():
     hello_world()
 
+
 @app.command("mcu")
 def mcu():
     hello_mcu()
 
+
 @app.command("say_hello")
-def say_hello_app(type_of_greeting:str):
+def say_hello_app(type_of_greeting: str):
     say_hello(type_of_greeting)
 
 

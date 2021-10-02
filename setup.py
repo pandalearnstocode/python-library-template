@@ -26,7 +26,7 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
     ],
-    description="Pythoon Library template for Data Science project.",
+    description="Python Library template for Data Science project.",
     entry_points={
         "console_scripts": [
             "lib_template=lib_template.cli:main",
@@ -40,7 +40,7 @@ setup(
     packages=find_packages(include=["lib_template", "lib_template.*"]),
     test_suite="tests",
     tests_require=test_requirements,
-    url="https://github.com/ab-inbev-martech-analytics/lib_template",
+    url="https://github.com/pandalearnstocode/python-library-template",
     version=__version__,
     zip_safe=False,
 )

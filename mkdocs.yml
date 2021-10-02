@@ -1,0 +1,34 @@
+site_name: Python library template wiki
+docs_dir: 'lib_wiki'
+site_description: 'Python library template wiki'
+site_author: 'Aritra Biswas'
+repo_url: 'https://github.com/pandalearnstocode/python-library-template'
+nav:
+    - Home: index.md
+    - About: about.md
+    - Code: code.md
+theme:
+  name: 'material'
+  language: 'es'
+  palette:
+    primary: 'Teal'
+    accent: 'Indigo'
+
+extra_css:
+  - 'css/prism.css'
+extra_javascript:
+  - js/prism.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/pandalearnstocode
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      css_class: code
+      use_pygments: false
+      guess_lang: false
+  - toc:
+      permalink: true

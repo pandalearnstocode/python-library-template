@@ -1,0 +1,1 @@
+All the generated logs when we run the library or script should be stored here. Log files has to be formatted by level. Also, it will be good to have different log files for different sub-module. Rotation has to be enabled for the log files. A helper function has to be developed to clean the log files, upload them in a blob storage.
