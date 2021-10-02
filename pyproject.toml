@@ -1,0 +1,25 @@
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.0.12"
+version_files = [
+    "lib_template/__init__.py",
+    "pyproject.toml:version"
+]
+style = [
+    ["qmark", "fg:#ff9d00 bold"],
+    ["question", "bold"],
+    ["answer", "fg:#ff9d00 bold"],
+    ["pointer", "fg:#ff9d00 bold"],
+    ["highlighted", "fg:#ff9d00 bold"],
+    ["selected", "fg:#cc5454"],
+    ["separator", "fg:#cc5454"],
+    ["instruction", ""],
+    ["text", ""],
+    ["disabled", "fg:#858585 italic"]
+]
+tag_format = "$version"
+update_changelog_on_bump = true
+
+
+[tool.black]
+line-length = 120
