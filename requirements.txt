@@ -27,3 +27,4 @@ hypothesis
 pytest-mock
 pylint
 typer
+sphinx_rtd_theme
