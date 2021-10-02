@@ -1,0 +1,2 @@
+Here all the sphinx files and dependencies are placed. Validated the API docs are getting generated. If a module is added in the source directory that has to be picked up and has to be shown in the generated API docs. Make sure that the HTML files and other *.js or *.css should not be included in gitignore otherwise the documents will not be generated in CI pipeline. Once the HTML site is generated using sphinx that has to be push to a static web site. Need to have these features in makefile as well.  Pin the name of the static website in readme section of the repository.
+ 

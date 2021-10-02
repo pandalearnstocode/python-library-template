@@ -1,0 +1,1 @@
+For this folder we need to have a script which can download data from a blob. Whatever files are getting generated we need to have a helper function which should be able to upload the generated result in the blob as well.
