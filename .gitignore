@@ -5,6 +5,8 @@
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
 
+.vscode
+
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
@@ -49,6 +51,8 @@ MANIFEST
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
+
+*.vscode
 
 # Installer logs
 pip-log.txt
