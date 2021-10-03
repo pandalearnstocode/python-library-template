@@ -1,7 +1,7 @@
 # Library template generation
 
 
-URL: https://pandalearnstocode.github.io/python-library-template/code/
+URL: https://pandalearnstocode.github.io/python-library-template/
 
 ## Features
 
