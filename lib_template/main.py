@@ -1,3 +1,4 @@
+from loguru import logger
 import lib_template.sub_module_1 as sub_module_1
 import lib_template.sub_module_2 as sub_module_2
 
