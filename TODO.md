@@ -4,21 +4,10 @@
 
 Right now this feature is being developed for just csv files. Later we need to extend this.
 
-__Initialize data folder:__
-
-Read all the files present in the data/input folder. create a files.lock file dict with key as data hash and value as file name. upload the datasets present in input folder along with the files.lock.
-
-__Download data:__
-
-Read the local file.lock file and file.lock file present in blob. If they are different then download the datasets for which they are different. update the local lock file.
-
-__Upload data:__
-
-Read the local file.lock and online file.lock file, upload the datasets for which the hash value is different between local and remote. Update the lock file in remote.
-
-__Clean data:__
-
-Delete all the files in input and output directory and also delete the content of file.lock dict in local.
+* __Initialize data folder:__
+* __Download data:__
+* __Upload data:__
+* __Clean data:__
 
 
 __Notes:__
@@ -27,10 +16,20 @@ __Notes:__
 * Have entry-point notebook and function in cli app.
 * Have the same feature in makefile.
 
+## Docker:
 
-__Status:__
+Process of building docker images,
 
-* Initialize data folder
-* Upload data
-* Download data
-* Clean data
+1. build image (build.Dockerfile : lib_template_build): all dependencies with data
+2. library image: library dependency only
+3. job runner image: library dependency with CLI app as entry point
+4. development image: library image with jupyter notebook as entry point
+
+
+__Notes:__
+
+* build multi-stage docker images
+* make sure that there no cache folder
+* do not embed secrets inside docker images
+* do not keep build level dependencies in final docker image
+* once docker image is build, check with dive is there any further optimization of docker image size is possible.
