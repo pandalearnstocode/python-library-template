@@ -10,20 +10,13 @@
 # TODO: Same thing has to be build with CUDA depdencies.
 # docker build -t lib_template_base:latest .
 # docker build -t lib_template_base:v1 .
+# TODO: make this multi-stage and split depdency and pin used libraries to a version
 
-# Stage 1: Builder/Compiler
-FROM python:3.8-slim-buster as builder
-ENV PIP_NO_CACHE_DIR=1
-RUN apt update && \
-    apt install --no-install-recommends -y build-essential gcc && \
-    apt-get clean
-COPY requirements.txt /requirements.txt
-RUN pip install --no-cache-dir --user --trusted-host pypi.org --trusted-host files.pythonhosted.org -r /requirements.txt --no-deps && \
-    rm -rf /root/.cache/pip
-
-# Stage 2: Runtime/Library Image
 FROM python:3.8-slim-buster
-COPY --from=builder /root/.local /root/.local
+ENV PIP_NO_CACHE_DIR=1
 ENV PATH=/root/.local/bin:$PATH
+COPY requirements.txt /requirements.txt
+RUN pip install --no-cache-dir --trusted-host pypi.org --trusted-host files.pythonhosted.org --use-deprecated=legacy-resolver -r /requirements.txt && \
+    rm -rf /root/.cache/pip
 COPY . .
-RUN pip install  --trusted-host pypi.org --trusted-host files.pythonhosted.org -e .
+RUN python setup.py install
