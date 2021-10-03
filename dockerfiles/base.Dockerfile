@@ -11,6 +11,7 @@
 # docker build -t lib_template_base:latest .
 # docker build -t lib_template_base:v1 .
 # TODO: make this multi-stage and split depdency and pin used libraries to a version
+# TODO: logs and data folder has to be mounted in working directory.
 
 FROM python:3.8-slim-buster
 ENV PIP_NO_CACHE_DIR=1
