@@ -88,3 +88,9 @@ install: clean ## install the package to the active Python's site-packages
 bump: clean
 	cz bump --changelog --check-consistency
 	git push --tags
+
+wiki generate: clean
+	mkdocs build
+	mkdocs serve
+wiki clean: clean
+	rm -fr site/
