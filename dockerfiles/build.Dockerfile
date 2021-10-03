@@ -8,6 +8,7 @@
 # TODO: Install agent pool or github runner depdending on which CI pipeline this image is running.
 # TODO: Install CML related depdencies in the docker image to generate CML report from the docker image.
 # TODO: Same thing has to be build with CUDA depdencies.
+# NOTE: This image will always have the latest tag.
 # docker build -t lib_template_build:latest .
 
 FROM python:3.8-slim-buster
