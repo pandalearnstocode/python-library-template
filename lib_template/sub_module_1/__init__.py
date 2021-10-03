@@ -1,1 +1,2 @@
+from loguru import logger
 from lib_template.sub_module_1.sub_module_1_functions import hello_world

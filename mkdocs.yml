@@ -1,5 +1,5 @@
 site_name: Python library template wiki
-docs_dir: 'lib_wiki'
+docs_dir: 'wiki_source'
 site_description: 'Python library template wiki'
 site_author: 'Aritra Biswas'
 repo_url: 'https://github.com/pandalearnstocode/python-library-template'

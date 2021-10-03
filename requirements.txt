@@ -9,12 +9,12 @@ python-dotenv==0.18.0
 commitizen
 pre-commit
 bump2version==0.5.11
-watchdog==0.9.0
-flake8==3.7.8
-tox==3.14.0
-coverage==4.5.4
+watchdog
+flake8
+tox
+coverage
 Sphinx
-pytest==6.2.4
+pytest
 pytest-azurepipelines
 pytest-cov
 commitizen
@@ -27,3 +27,5 @@ hypothesis
 pytest-mock
 pylint
 typer
+sphinx_rtd_theme
+packaging==20.9
