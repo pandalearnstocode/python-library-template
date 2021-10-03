@@ -94,3 +94,6 @@ wiki generate: clean
 	mkdocs serve
 wiki clean: clean
 	rm -fr site/
+wiki publish gh: clean
+	mkdocs build
+	mkdocs gh-deploy
