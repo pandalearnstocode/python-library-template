@@ -89,11 +89,13 @@ bump: clean
 	cz bump --changelog --check-consistency
 	git push --tags
 
-wiki generate: clean
+wiki-generate: clean
 	mkdocs build
 	mkdocs serve
-wiki clean: clean
-	rm -fr site/
-wiki publish gh: clean
+
+wiki-clean: 
+	rm -rf site/
+
+wiki-publish-gh: clean
 	mkdocs build
 	mkdocs gh-deploy
