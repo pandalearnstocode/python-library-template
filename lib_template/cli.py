@@ -7,7 +7,6 @@ from lib_template.main import say_hello
 
 app = typer.Typer()
 
-
 @app.command("hello")
 def hello():
     hello_world()
@@ -24,4 +23,6 @@ def say_hello_app(type_of_greeting: str):
 
 
 if __name__ == "__main__":
+    logger.info("Starting CLI application")
     app()
+    logger.info("Ending CLI application")

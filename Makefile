@@ -48,6 +48,8 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint: ## check style with flake8
+	autoflake --in-place -r --remove-unused-variables --remove-unused-variables lib_template/ tests/
+	pytest lib_template/ tests/
 	flake8 lib_template tests
 
 test: ## run tests quickly with the default Python

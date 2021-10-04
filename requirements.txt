@@ -29,3 +29,4 @@ pylint
 typer
 sphinx_rtd_theme
 packaging==20.9
+autoflake==1.4

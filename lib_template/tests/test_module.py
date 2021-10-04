@@ -1,6 +1,5 @@
-# All the main module level tests and all the tests which require interation with the other sub-modules should live here.
-
-import pytest
+# All the main module level tests and all the tests which require interation with the other
+# sub-modules should live here.
 
 from lib_template.main import say_hello
 
