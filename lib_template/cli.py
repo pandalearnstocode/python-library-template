@@ -7,6 +7,7 @@ from lib_template.main import say_hello
 
 app = typer.Typer()
 
+
 @app.command("hello")
 def hello():
     hello_world()

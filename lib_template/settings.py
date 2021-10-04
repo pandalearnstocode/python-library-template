@@ -7,7 +7,8 @@
 import os
 import pathlib
 from dotenv import load_dotenv
+
 load_dotenv()
 
-LOG_DIR = pathlib.Path(os.getenv('LOG_DIR'))
-DATA_DIR = pathlib.Path(os.getenv('DATA_DIR'))
+LOG_DIR = pathlib.Path(os.getenv("LOG_DIR"))
+DATA_DIR = pathlib.Path(os.getenv("DATA_DIR"))
