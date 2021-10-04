@@ -99,3 +99,4 @@ wiki-clean:
 wiki-publish-gh: clean
 	mkdocs build
 	mkdocs gh-deploy
+	rm -rf site/
