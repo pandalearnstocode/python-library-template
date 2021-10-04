@@ -1,6 +1,8 @@
 # Directory structure of the python project
 
 
+## Directory tree
+
 ```
 ├───data
 │   ├───persistent
@@ -42,6 +44,8 @@
     ├───css
     └───js
 ```
+
+## Directory description
 
 * __data:__ data folder will have all the datasets. any datasets which we want to push to blob or download from blob has to be placed in `temporary` folder. `persistent` folder is the folder which will have the files and hash value based mapping. this folder will be synced with a blob in a periodic basis.
 * __dockerfiles:__ this directory will have multiple reusable `*.Dockerfile`, all the supporting files required to build these docker images will be in respect folder inside the `dockerfiles` directory.
