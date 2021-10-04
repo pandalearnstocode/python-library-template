@@ -49,7 +49,7 @@ clean-test: ## remove test and coverage artifacts
 
 lint: ## check style with flake8
 	black .
-	autoflake --in-place -r --remove-unused-variables --remove-unused-variables lib_template/
+	autoflake --in-place -r --remove-unused-variables --remove-all-unused-imports lib_template/
 	flake8 lib_template
 	pylint lib_template
 	pytest lib_template/ 
