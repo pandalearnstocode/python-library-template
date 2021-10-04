@@ -235,9 +235,46 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Directory structure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Directory structure
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#directory-tree" class="md-nav__link">
+    Directory tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-description" class="md-nav__link">
+    Directory description
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -277,6 +314,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#directory-tree" class="md-nav__link">
+    Directory tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-description" class="md-nav__link">
+    Directory description
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -293,6 +352,7 @@
                 
                 
                 <h1 id="directory-structure-of-the-python-project">Directory structure of the python project<a class="headerlink" href="#directory-structure-of-the-python-project" title="Permanent link">&para;</a></h1>
+<h2 id="directory-tree">Directory tree<a class="headerlink" href="#directory-tree" title="Permanent link">&para;</a></h2>
 <pre><code>├───data
 │   ├───persistent
 │   └───temporary
@@ -333,6 +393,7 @@
     ├───css
     └───js
 </code></pre>
+<h2 id="directory-description">Directory description<a class="headerlink" href="#directory-description" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>data:</strong> data folder will have all the datasets. any datasets which we want to push to blob or download from blob has to be placed in <code>temporary</code> folder. <code>persistent</code> folder is the folder which will have the files and hash value based mapping. this folder will be synced with a blob in a periodic basis.</li>
 <li><strong>dockerfiles:</strong> this directory will have multiple reusable <code>*.Dockerfile</code>, all the supporting files required to build these docker images will be in respect folder inside the <code>dockerfiles</code> directory.</li>
