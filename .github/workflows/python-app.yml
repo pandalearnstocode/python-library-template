@@ -56,8 +56,6 @@ jobs:
     - name: Deploy MkDocs
       run: |
         mkdocs build
-        mkdocs gh-deploy
-        rm -rf site/
     - name: Sphinx Build
       uses: ammaraskar/sphinx-action@0.4
     - name: Generate changelog
