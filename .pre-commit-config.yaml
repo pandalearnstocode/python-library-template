@@ -6,6 +6,7 @@ repos:
       exclude: &fixtures tests/functional/|tests/input|tests/extensions/data|tests/regrtest_data/|tests/data/
       args:
         - --in-place
+        - --ignore-init-module-imports
         - --remove-all-unused-imports
         - --expand-star-imports
         - --remove-duplicate-keys
