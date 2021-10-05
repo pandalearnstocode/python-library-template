@@ -43,3 +43,22 @@ jobs:
     - name: Testing pre-build code with pytest
       run: |
         pytest lib_template/
+    - name: Install library
+      run: |
+        python setup.py install
+    - name: Test after installing library
+      run: |
+        pytest .
+    - name: Generate binary distribution
+      run: |
+        python setup.py sdist
+        python setup.py bdist_wheel
+    - name: Deploy MkDocs
+      run: |
+        mkdocs build
+        mkdocs gh-deploy
+        rm -rf site/
+    - name: Sphinx Build
+      uses: ammaraskar/sphinx-action@0.4
+    - name: Generate changelog
+      uses: heinrichreimer/action-github-changelog-generator@v2.2
