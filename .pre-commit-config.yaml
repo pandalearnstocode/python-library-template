@@ -4,7 +4,6 @@ repos:
     rev: v4.0.1
     hooks:
       - id: check-vcs-permalinks
-      - id: end-of-file-fixer
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
       - id: debug-statements
