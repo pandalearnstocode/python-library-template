@@ -56,7 +56,18 @@ jobs:
     - name: Deploy MkDocs
       run: |
         mkdocs build
-    - name: Sphinx Build
-      uses: ammaraskar/sphinx-action@0.4
+#     - name: Sphinx Build
+#       run: |
+#         cd docs && make html
     - name: Generate changelog
       uses: heinrichreimer/action-github-changelog-generator@v2.2
+#     - uses: actions/checkout@v2
+#     - name: docker login
+#       env:
+#         DOCKER_USER: ${{ secrets.DOCKER_USER }}   
+#         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
+#       run: |
+#         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+#     - name: docker build csharp
+#       run: |
+#         docker build ./c# -t aimvector/csharp:1.0.0
