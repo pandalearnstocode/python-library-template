@@ -56,8 +56,8 @@ jobs:
     - name: Deploy MkDocs
       run: |
         mkdocs build
-    - name: Sphinx Build
-      run: |
-        cd docs && make html
+#     - name: Sphinx Build
+#       run: |
+#         cd docs && make html
     - name: Generate changelog
       uses: heinrichreimer/action-github-changelog-generator@v2.2
