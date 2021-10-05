@@ -49,10 +49,10 @@ clean-test: ## remove test and coverage artifacts
 
 lint: ## check style with flake8
 	black .
-	autoflake --in-place -r --remove-unused-variables --remove-all-unused-imports lib_template/
+	autoflake --in-place -r --ignore-init-module-imports --remove-unused-variables --remove-all-unused-imports lib_template/
 	flake8 lib_template
 	pylint lib_template
-	pytest lib_template/ 
+	pytest lib_template/
 	pytest tests/
 
 test: ## run tests quickly with the default Python
@@ -98,7 +98,7 @@ wiki-generate: clean
 	mkdocs build
 	mkdocs serve
 
-wiki-clean: 
+wiki-clean:
 	rm -rf site/
 
 wiki-publish-gh: clean
