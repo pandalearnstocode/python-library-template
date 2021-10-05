@@ -109,4 +109,4 @@ wiki-publish-gh: clean
 commit-push: clean
 	git add .
 	cz -n cz_commitizen_emoji c
-	git push
+	git push origin develop
