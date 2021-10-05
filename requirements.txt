@@ -5,10 +5,10 @@ joblib==1.0.1
 black==21.7b0
 setuptools
 loguru
-python-dotenv==0.18.0
+python-dotenv==0.19.0
 commitizen
 pre-commit
-bump2version==0.5.11
+bump2version==1.0.1
 watchdog
 flake8
 tox
