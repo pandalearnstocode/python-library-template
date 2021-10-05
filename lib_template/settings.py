@@ -19,10 +19,8 @@ try:
     logger.info("Assigning values to LOG_DIR and DATA_DIR from env variable.")
 except Exception as e:
     try:
-        if not LOG_DIR.is_dir():
-            LOG_DIR = LOG_DIR_LOCAL
-        if not DATA_DIR.is_dir():
-            DATA_DIR = DATA_DIR_LOCAL
+        LOG_DIR = LOG_DIR_LOCAL
+        DATA_DIR = DATA_DIR_LOCAL
     except Exception as e:
         logger.error(f"Error in assigning values to LOG_DIR and DATA_DIR from env variable. {e}")
         raise e
