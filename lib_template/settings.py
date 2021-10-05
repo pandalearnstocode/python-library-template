@@ -9,19 +9,23 @@ import pathlib
 from dotenv import load_dotenv
 from loguru import logger
 load_dotenv()
+LOG_DIR = "logs"
+DATA_DIR = "data"
+LOG_DIR_LOCAL = "lib_template/logs"
+DATA_DIR_LOCAL = "lib_template/data"
 try:
     LOG_DIR = pathlib.Path(os.getenv("LOG_DIR"))
     DATA_DIR = pathlib.Path(os.getenv("DATA_DIR"))
-except:
-    LOG_DIR_LOCAL = "lib_template/logs"
-    DATA_DIR_LOCAL = "lib_template/data"
-    LOG_DIR = "logs"
-    DATA_DIR = "data"
-
-if not LOG_DIR.is_dir():
-    LOG_DIR = LOG_DIR_LOCAL
-if not DATA_DIR.is_dir():
-    DATA_DIR = DATA_DIR_LOCAL
+    logger.info("Assigning values to LOG_DIR and DATA_DIR from env variable.")
+except Exception as e:
+    try:
+        if not LOG_DIR.is_dir():
+            LOG_DIR = LOG_DIR_LOCAL
+        if not DATA_DIR.is_dir():
+            DATA_DIR = DATA_DIR_LOCAL
+    except Exception as e:
+        logger.error(f"Error in assigning values to LOG_DIR and DATA_DIR from env variable. {e}")
+        raise e
 
 logger.info(f"Logging will be stored in : {LOG_DIR}.")
 logger.info(f"Data will be stored in : {DATA_DIR}.")
