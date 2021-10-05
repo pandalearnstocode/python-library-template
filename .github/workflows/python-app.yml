@@ -53,4 +53,7 @@ jobs:
       run: |
         python setup.py sdist
         python setup.py bdist_wheel
-      
+    - name: Deploy MkDocs
+      uses: mhausenblas/mkdocs-deploy-gh-pages@1.23
+    - name: Sphinx Build
+      uses: ammaraskar/sphinx-action@0.4
