@@ -57,6 +57,7 @@ jobs:
       run: |
         mkdocs build
     - name: Sphinx Build
-      uses: ammaraskar/sphinx-action@0.4
+      run: |
+        cd docs && make html
     - name: Generate changelog
       uses: heinrichreimer/action-github-changelog-generator@v2.2
