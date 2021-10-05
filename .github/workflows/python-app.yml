@@ -43,3 +43,14 @@ jobs:
     - name: Testing pre-build code with pytest
       run: |
         pytest lib_template/
+    - name: Install library
+      run: |
+        python setup.py install
+    - name: Test after installing library
+      run: |
+        pytest .
+    - name: Generate binary distribution
+      run: |
+        python setup.py sdist
+        python setup.py bdist_wheel
+      
