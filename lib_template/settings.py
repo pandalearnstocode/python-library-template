@@ -12,3 +12,9 @@ load_dotenv()
 
 LOG_DIR = pathlib.Path(os.getenv("LOG_DIR"))
 DATA_DIR = pathlib.Path(os.getenv("DATA_DIR"))
+LOG_DIR_LOCAL = "lib_template/logs"
+DATA_DIR = "lib_template/data"
+if not LOG_DIR.is_dir():
+    LOG_DIR = LOG_DIR_LOCAL
+if not DATA_DIR.is_dir():
+    DATA_DIR = DATA_DIR
