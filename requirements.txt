@@ -30,3 +30,4 @@ typer
 sphinx_rtd_theme
 packaging==20.9
 autoflake==1.4
+commitizen-emoji==0.1.5
