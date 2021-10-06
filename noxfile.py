@@ -26,3 +26,6 @@ def add_2():
 def multiplication():
     return 2 * 2
 
+def add_3():
+    return 3 + 3
+
