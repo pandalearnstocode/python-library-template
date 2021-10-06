@@ -1,4 +1,26 @@
-## Unreleased
+## v0.2.1 (2021-10-06)
+
+### Fix
+
+- adding new fix.
+
+## v0.2.0 (2021-10-06)
+
+### Feat
+
+- adding new features.
+
+### Fix
+
+- adding new functions.
+
+## v0.1.2 (2021-10-06)
+
+### Fix
+
+- adding new function.
+
+## v0.1.1 (2021-10-06)
 
 ### Fix
 
