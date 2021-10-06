@@ -24,7 +24,7 @@ jobs:
         python -m pip install -r requirements_docs.txt
     - name: Build project wiki using MkDocs
       run: |
-	python -m mkdocs build
+        python -m mkdocs build
     - name: Build library API documents using Sphinx
       run: |
         sudo apt-get update
@@ -38,16 +38,16 @@ jobs:
       with:
         azcliversion: 2.0.72
         inlineScript: |
-            az storage blob upload-batch --account-name <STORAGE_ACCOUNT_NAME_WIKI> --auth-mode key -d '$web' -s <path to project wiki>
-	    az storage blob upload-batch --account-name <STORAGE_ACCOUNT_NAME_DOCS> --auth-mode key -d '$web' -s <path to library docs>
+            az storage blob upload-batch --account-name <STORAGE_ACCOUNT_NAME_WIKI> --auth-mode key -d '$web' -s <path to project wiki> && \
+	    az storage blob upload-batch --account-name <STORAGE_ACCOUNT_NAME_DOCS> --auth-mode key -d '$web' -s <path to library docs> && \
 	    az storage blob upload-batch --account-name <STORAGE_ACCOUNT_NAME_OTHERS> --auth-mode key -d '$web' -s <path to other HTML docs>
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
         azcliversion: 2.0.72
         inlineScript: |
-           az cdn endpoint purge --content-paths  "<path to project wiki>/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"
-           az cdn endpoint purge --content-paths  "<path to library docs>/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"
+           az cdn endpoint purge --content-paths  "<path to project wiki>/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP" && \
+           az cdn endpoint purge --content-paths  "<path to library docs>/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP" && \
            az cdn endpoint purge --content-paths  "<path to other HTML docs>/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"
     - name: logout
       run: |
