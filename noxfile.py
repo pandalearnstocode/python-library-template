@@ -36,3 +36,6 @@ def add_4():
 
 def add_5():
     return 5 + 5
+
+def add_6():
+    return 6 + 6
