@@ -1,19 +1,36 @@
+## Unreleased
+
+### Fix
+
+- new fix.
+
 ## v0.1.0 (2021-10-06)
 
-### Feat
+### Fix
 
-- adding new feature of add.
+- new fix.
 
 ## v0.0.2 (2021-10-06)
 
 ### Fix
 
-- adding new stuff.
+- adding multiplication function.
+- adding new changes.
 
-## 0.0.1 (2021-10-06)
+## v0.0.1 (2021-10-06)
+
+### Feat
+
+- adding a new function noxfile.
+- adding new feature of add.
 
 ### Fix
 
+- adding new stuff.
+- adding a dummy function in nox file.
+- changed tags from 0.0.2 to 0.0.1
+- adding stuff in pyproject.toml.
+- adding a jupyter notebook.
 - no pre-commit hooks here.
 - adding commitizen in pre-commit hook.
 - adding --ignore-init-module-imports flag in autoflake section in makefile.
