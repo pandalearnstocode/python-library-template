@@ -1,6 +1,6 @@
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.0.2"
+version = "0.0.1"
 version_files = [
     "lib_template/__init__.py",
     "pyproject.toml:version"
@@ -20,6 +20,7 @@ style = [
 update_changelog_on_bump = true
 tag_format = "v$version"
 bump_message = "bump: $current_version → $new_version [skip-ci]"
+annotated_tag = true
 
 [tool.black]
 line-length = 120
