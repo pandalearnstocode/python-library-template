@@ -21,3 +21,8 @@ def add():
 
 def add_2():
     return 2 + 2
+
+
+def multiplication():
+    return 2 * 2
+
