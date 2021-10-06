@@ -17,3 +17,7 @@ def hello():
 
 def add():
     return 1 + 1
+
+
+def add_2():
+    return 2 + 2
