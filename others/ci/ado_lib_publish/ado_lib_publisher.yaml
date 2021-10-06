@@ -15,6 +15,10 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: '3.8'
+    - name: 'Login via Azure CLI'
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -36,3 +40,14 @@ jobs:
       run: |
         python -m twine upload -r <organizationName> dist/*
         python -m twine upload -r feedName --config-file $(PYPIRC_PATH) dist/*.whl
+    - name: Build and push docker images to docker registry
+      uses: azure/docker-login@v1 
+      with:
+        login-server: <docker registry name goes here.>
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+      run: |
+        docker build . -t <docker registry name goes here.>/<docker image name>:${{ github.sha }}
+        docker push <docker registry name goes here.>/<docker image name>:${{ github.sha }}
+        docker build . -t <docker registry name goes here.>/<docker image name>:latest
+        docker push <docker registry name goes here.>/<docker image name>:latest
