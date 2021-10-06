@@ -14,3 +14,6 @@ def lint(session):
 
 def hello():
     return "hello"
+
+def add():
+    return 1 + 1
