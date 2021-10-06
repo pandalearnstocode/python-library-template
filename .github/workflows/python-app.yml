@@ -50,7 +50,6 @@ jobs:
       run: |
         python -m pip install pytest pytest-cov coverage pytest-cov flake8 pylint codecov
         pytest --cov=./ --cov-report=xml
-        codecov
         flake8 --exit-zero --output-file=flake8.txt .
         pylint --exit-zero . -r n --msg-template="{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}" > pylint.txt
     - name: SonarCloud Scan
