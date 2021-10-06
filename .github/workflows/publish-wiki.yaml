@@ -24,8 +24,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        apt-get update
-        apt-get -y install make
+        sudo apt-get update
+        sudo apt-get -y install make
         python -m mkdocs build
         python -m pip install -r requirements_docs.txt
         make docs
