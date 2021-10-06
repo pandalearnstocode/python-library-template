@@ -48,26 +48,17 @@ jobs:
         python setup.py install
     - name: Test after installing library
       run: |
-        pytest .
+        python -m pip install pytest pytest-cov coverage pytest-cov flake8 pylint codecov
+        pytest --cov=./ --cov-report=xml
+        codecov
+        flake8 --exit-zero --output-file=flake8.txt .
+        pylint --exit-zero . -r n --msg-template="{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}" > pylint.txt
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     - name: Generate binary distribution
       run: |
         python setup.py sdist
         python setup.py bdist_wheel
-    - name: Deploy MkDocs
-      run: |
-        mkdocs build
-#     - name: Sphinx Build
-#       run: |
-#         cd docs && make html
-    - name: Generate changelog
-      uses: heinrichreimer/action-github-changelog-generator@v2.2
-#     - uses: actions/checkout@v2
-#     - name: docker login
-#       env:
-#         DOCKER_USER: ${{ secrets.DOCKER_USER }}   
-#         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
-#       run: |
-#         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-#     - name: docker build csharp
-#       run: |
-#         docker build ./c# -t aimvector/csharp:1.0.0
