@@ -29,3 +29,7 @@ def multiplication():
 def add_3():
     return 3 + 3
 
+
+
+def add_4():
+    return 4 + 4
