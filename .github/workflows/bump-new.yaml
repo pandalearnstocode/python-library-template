@@ -1,3 +1,5 @@
+name: NEW Bump version
+
 on:
   push:
     branches:
