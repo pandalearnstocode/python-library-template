@@ -32,6 +32,7 @@ jobs:
     - name: Create bump
       run: |
         cz bump --yes
+        cz changelog
         git push --tags
     - name: Push changes
       uses: ad-m/github-push-action@master
