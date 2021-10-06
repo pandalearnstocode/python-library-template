@@ -39,3 +39,7 @@ def add_5():
 
 def add_6():
     return 6 + 6
+
+
+def add_7():
+    return 7 + 7
