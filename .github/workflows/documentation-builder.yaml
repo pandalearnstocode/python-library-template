@@ -1,0 +1,69 @@
+name: Documentation builder
+on:
+    push:
+        branches: [develop]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        token: '${{ secrets.PERSONAL_ACCESS_TOKEN }}'
+        fetch-depth: 0
+    - uses: azure/login@v1
+      with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.8'
+    - name: Install documnetation related dependencies
+      run: |
+        python -m pip install -r requirements_docs.txt
+    - name: Build project wiki using MkDocs
+      run: |
+        python -m mkdocs build
+    - name: Push doc to Github Page
+      uses: peaceiris/actions-gh-pages@v2
+      env:
+        PERSONAL_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./site
+    - name: Build library API documents using Sphinx
+      run: |
+        sudo apt-get update
+        sudo apt-get -y install make
+        make docs
+    - name: Build other documents such as test coverage report, wily etc.
+      run: |
+        make docs
+    - name: Upload wiki to azure static website
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+            az storage blob upload-batch --account-name <STORAGE_ACCOUNT_NAME_WIKI> --auth-mode key -d '$web' -s <path to project wiki>
+    - name: Upload library documentation to azure static website
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+            az storage blob upload-batch --account-name <STORAGE_ACCOUNT_NAME_DOCS> --auth-mode key -d '$web' -s <path to library docs>
+    - name: Upload other HTML pages to azure static website
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+            az storage blob upload-batch --account-name <STORAGE_ACCOUNT_NAME_OTHERS> --auth-mode key -d '$web' -s <path to other HTML docs>
+    - name: Purge CDN endpoint
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+           az cdn endpoint purge --content-paths  "<path to project wiki>/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP" && \
+           az cdn endpoint purge --content-paths  "<path to library docs>/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP" && \
+           az cdn endpoint purge --content-paths  "<path to other HTML docs>/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"
+    - name: logout
+      run: |
+            az logout
+      if: always()
