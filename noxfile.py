@@ -11,3 +11,6 @@ def tests(session):
 def lint(session):
     session.install("flake8")
     session.run("flake8", "--import-order-style", "google")
+
+def hello():
+    return "hello"
