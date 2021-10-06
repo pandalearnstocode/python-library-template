@@ -24,4 +24,6 @@ def say_hello_app(type_of_greeting: str):
 
 
 if __name__ == "__main__":
+    logger.info("Starting CLI application")
     app()
+    logger.info("Ending CLI application")

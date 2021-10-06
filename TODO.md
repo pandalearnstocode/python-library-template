@@ -36,3 +36,9 @@ __Notes:__
 * do not embed secrets inside docker images
 * do not keep build level dependencies in final docker image
 * once docker image is build, check with dive is there any further optimization of docker image size is possible.
+
+
+
+## List of pre-commit hooks
+
+https://github.com/nbQA-dev/nbQA

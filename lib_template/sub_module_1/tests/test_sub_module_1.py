@@ -1,6 +1,7 @@
-# All the sub module 1 related tests will be here
-import pytest
-import lib_template.sub_module_1 as sub_module_1
+# All the sub module 1 related tests will be here.
+# These will be mostly unit tests.
+
+from lib_template import sub_module_1
 
 
 def test_hello_world():

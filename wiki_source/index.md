@@ -1,17 +1,11 @@
-# Welcome to MkDocs
+# Python project template for data science project
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+This is a repository will list of reusable components for building a python library and using it in data science workflow.
 
-## Commands
+## Purpose of the project
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+* quick start
+* common structure between project
+* packing and distribution of code
+* quick on-boarding
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.

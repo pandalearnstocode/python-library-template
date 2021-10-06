@@ -1,3 +1,9 @@
+# Pre-commit hooks
+
+Before pushing some changes in the git repository we need to check some stuff. We are implementing this using pre-commit hook. `.pre-commit-config.yaml` file in te project root directory will have all the hooks configure. Notes, these hooks are order dependent. Here is the pre-commit hook files content,
+
+
+```
 repos:
 - repo: https://github.com/commitizen-tools/commitizen
   rev: v2.19.0
@@ -55,3 +61,8 @@ repos:
       additional_dependencies:
         ["platformdirs==2.2.0", "types-pkg_resources==0.1.3", "types-toml==0.1.3"]
       exclude: tests/functional/|tests/input|tests(/.*)*/data|tests/regrtest_data/|tests/data/|tests(/.*)+/conftest.py|doc/|bin/
+
+```
+
+
+Here, first we are checking commit rules using commitizen. To know about this project more check [this](https://commitizen-tools.github.io/commitizen/) url. 

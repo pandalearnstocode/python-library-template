@@ -5,11 +5,12 @@ site_author: 'Aritra Biswas'
 repo_url: 'https://github.com/pandalearnstocode/python-library-template'
 nav:
     - Home: index.md
-    - About: about.md
-    - Code: code.md
+    - Directory structure: dir_str.md
+    - Data: data.md
+    - Source: source.md
 theme:
   name: 'material'
-  language: 'es'
+  language: 'en'
   palette:
     primary: 'Teal'
     accent: 'Indigo'

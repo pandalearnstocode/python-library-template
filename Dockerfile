@@ -1,4 +1,3 @@
-
 FROM lib_template_base:latest
 ENV PIP_NO_CACHE_DIR=1
 ENV PATH=/root/.local/bin:$PATH
