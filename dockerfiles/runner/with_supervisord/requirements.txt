@@ -1,0 +1,4 @@
+loguru
+azure-servicebus
+python-dotenv==0.18.0
+requests==2.24.0
